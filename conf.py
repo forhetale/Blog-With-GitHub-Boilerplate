@@ -14,17 +14,17 @@ template = {
     "path": "../Galileo"
 }
 enable_jsdelivr = {
-    "enabled": False,
-    "repo": ""
+    "enabled": Ture,
+    "repo": "Silent-Tt/Blog-With-GitHub-Boilerplate@gh-pages"
 }
 
 # 站点设置
 site_name = "半半's wiki"
 site_logo = "${static_prefix}logo.png"
-site_build_date = "2019-12-18T16:51+08:00"
+site_build_date = "2020-6-20T14:38+08:00"
 author = "半半"
 email = "banban@forhetale.com"
-author_homepage = "https://www.imalan.cn"
+author_homepage = "https://blog.forhetale.com"
 description = "Growth always means change."
 key_words = ['Maverick', 'Galileo', 'blog','半半']
 language = 'zh-CN'
