@@ -14,7 +14,7 @@ template = {
     "path": "../Galileo"
 }
 enable_jsdelivr = {
-    "enabled": Ture,
+    "enabled": True,
     "repo": "forhetale/Blog-With-GitHub-Boilerplate@gh-pages"
 }
 
