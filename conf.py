@@ -15,7 +15,7 @@ template = {
 }
 enable_jsdelivr = {
     "enabled": Ture,
-    "repo": "Silent-Tt/Blog-With-GitHub-Boilerplate@gh-pages"
+    "repo": "forhetale/Blog-With-GitHub-Boilerplate@gh-pages"
 }
 
 # 站点设置
@@ -61,7 +61,7 @@ social_links = [
     },
     {
         "name": "GitHub",
-        "url": "https://github.com/Silent-Tt",
+        "url": "https://github.com/forhetale",
         "icon": "gi gi-github"
     },
     {
