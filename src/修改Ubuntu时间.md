@@ -16,11 +16,11 @@ excerpt: 修改Ubuntu时区以达到目的
 
 Ubuntu时钟分为系统时钟（System Clock）和硬件（Real Time Clock，简称RTC）时钟。
 
-```css
+```
 查看系统时间：date -R
 ```
 
-```css
+```
 查看硬件时间: sudo hwclock --show
 ```
 
@@ -30,7 +30,7 @@ Ubuntu时钟分为系统时钟（System Clock）和硬件（Real Time Clock，�
 
 ### 修改时间
 
-```css
+```
 tzselect  
 ```
 
@@ -38,13 +38,13 @@ tzselect
 
 ### 复制文件到/etc目录下
 
-```css
+```
 sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
 ```
 
 ### 查看修改结果
 
-```css
+```
 date -R
 ```
 
@@ -52,7 +52,7 @@ date -R
 
 ## 修改Ubuntu硬件时间
 
-```css
+```
 sudo date -s MM/DD/YY //修改日期
 sudo date -s hh:mm:ss //修改时间
 sudo hwclock --systohc //修改生效
