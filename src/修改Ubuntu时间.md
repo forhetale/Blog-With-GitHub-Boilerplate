@@ -12,8 +12,6 @@ tags:
 excerpt: 修改Ubuntu时区以达到目的
 ---
 
-# Ubuntu修改时间
-
 Ubuntu时钟分为系统时钟（System Clock）和硬件（Real Time Clock，简称RTC）时钟。
 
 ```
