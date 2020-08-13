@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Maverick,Galileo,blog,半半" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="半半's wiki &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="半半's wiki &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/galileo-3f4dcc35c9.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/katex.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/993887726f709e8760ce9bc55ee66643.json"
+        }
+    </script>
+    
+<title>Rclone常用命令参数 - 半半's wiki</title>
+<meta name="author" content="P3TERX" />
+<meta name="description" content="转载一些rclone的命令语法" />
+<meta property="og:title" content="Rclone常用命令参数 - 半半's wiki" />
+<meta property="og:description" content="转载一些rclone的命令语法" />
+<meta property="og:site_name" content="半半's wiki" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/rclone-advanced-user-manual-common-command-parameters/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-08-14T06:03:00-00.00" />
+<meta name="twitter:title" content="Rclone常用命令参数 - 半半's wiki" />
+<meta name="twitter:description" content="转载一些rclone的命令语法" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">半半's wiki</a></h1>
+                        <p>Growth always means change.</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Rclone常用命令参数</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>P3TERX</span>
+                <time>
+                    2020-08-14
+                </time>
+                
+                in <a no-style class="category" href="/category/工具/">
+                    工具
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <p>转载自：<a href="https://p3terx.com/archives/rclone-advanced-user-manual-common-command-parameters.html">P3TERX ZONE—Rclone 进阶使用教程 - 常用命令参数详解</a></p>
+<h2>前言</h2>
+<p>Rclone 是一个的命令行工具，支持在不同对象存储、网盘间同步、上传、下载数据。并且通过一些设置可以实现离线下载、服务器备份等非常实用的功能。本篇文章将讲解 Rclone 常用的一些命令参数。</p>
+<h2>安装 Rclone</h2>
+<h3>Linux/macOS/BSD</h3>
+<p>官方提供了<a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2luc3RhbGwvI3NjcmlwdC1pbnN0YWxsYXRpb24=">一键安装脚本</a>：</p>
+<div class="highlight"><pre><span></span>curl https://rclone.org/install.sh <span class="p">|</span> sudo bash
+</pre></div>
+<h3>Windows</h3>
+<p><a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2Rvd25sb2Fkcy8=">直接下载</a></p>
+<h2>Rclone 设置</h2>
+<p><code>rclone config</code> - 进入交互式配置选项，进行添加、删除、管理网盘等操作。详细操作参见：《<a href="https://p3terx.com/archives/rclone-installation-and-configuration-tutorial.html">Rclone 安装配置教程</a>》</p>
+
+<pre><code>rclone config file` - 显示配置文件的路径，一般配置文件在 `~/.config/rclone/rclone.conf</code></pre>
+<p><code>rclone config show</code> - 显示配置文件信息</p>
+<h2>命令语法</h2>
+<div class="highlight"><pre><span></span><span class="c1"># 本地到网盘</span>
+rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;本地路径&gt; &lt;网盘名称:路径&gt; <span class="o">[</span>参数<span class="o">]</span> <span class="o">[</span>参数<span class="o">]</span> ...
+
+<span class="c1"># 网盘到本地</span>
+rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘名称:路径&gt; &lt;本地路径&gt; <span class="o">[</span>参数<span class="o">]</span> <span class="o">[</span>参数<span class="o">]</span> ...
+
+<span class="c1"># 网盘到网盘</span>
+rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘名称:路径&gt; &lt;网盘名称:路径&gt; <span class="o">[</span>参数<span class="o">]</span> <span class="o">[</span>参数<span class="o">]</span> ...
+</pre></div>
+<h3>用法示例</h3>
+<div class="highlight"><pre><span></span>rclone move -v /Download Onedrive:/Download --transfers<span class="o">=</span><span class="m">1</span>
+</pre></div>
+<h2>常用功能选项</h2>
+<ul>
+<li><code>rclone copy</code> - 复制</li>
+<li><code>rclone move</code> - 移动，如果要在移动后删除空源目录，请加上 <code>--delete-empty-src-dirs</code> 参数</li>
+<li><code>rclone sync</code> - 同步：将源目录同步到目标目录，只更改目标目录。</li>
+<li><code>rclone size</code> - 查看网盘文件占用大小。</li>
+<li><code>rclone delete</code> - 删除路径下的文件内容。</li>
+<li><code>rclone purge</code> - 删除路径及其所有文件内容。</li>
+<li><code>rclone mkdir</code> - 创建目录。</li>
+<li><code>rclone rmdir</code> - 删除目录。</li>
+<li><code>rclone rmdirs</code> - 删除指定灵境下的空目录。如果加上 <code>--leave-root</code> 参数，则不会删除根目录。</li>
+<li><code>rclone check</code> - 检查源和目的地址数据是否匹配。</li>
+<li><code>rclone ls</code> - 列出指定路径下的所有的文件以及文件大小和路径。</li>
+<li><code>rclone lsl</code> - 比上面多一个显示上传时间。</li>
+<li><code>rclone lsd</code> 列出指定路径下的目录</li>
+<li><code>rclone lsf</code> - 列出指定路径下的目录和文件</li>
+</ul>
+<h2>常用参数</h2>
+<ul>
+<li><code>-n</code> = <code>--dry-run</code> - 测试运行，用来查看 rclone 在实际运行中会进行哪些操作。</li>
+<li><code>-P</code> = <code>--progress</code> - 显示实时传输进度，500mS 刷新一次，否则默认 1 分钟刷新一次。</li>
+<li><code>--cache-chunk-size SizeSuffi</code> - 块的大小，默认5M，理论上是越大上传速度越快，同时占用内存也越多。如果设置得太大，可能会导致进程中断。</li>
+<li><code>--cache-chunk-total-size SizeSuffix</code> - 块可以在本地磁盘上占用的总大小，默认10G。</li>
+<li><code>--transfers=N</code> - 并行文件数，默认为4。在比较小的内存的VPS上建议调小这个参数，比如128M的小鸡上使用建议设置为1。</li>
+<li><code>--config string</code> - 指定配置文件路径，<code>string</code>为配置文件路径。</li>
+<li><code>--ignore-errors</code> - 跳过错误。比如 OneDrive 在传了某些特殊文件后会提示<code>Failed to copy: failed to open source object: malwareDetected: Malware detected</code>，这会导致后续的传输任务被终止掉，此时就可以加上这个参数跳过错误。但需要注意 RCLONE 的退出状态码不会为<code>0</code>。</li>
+</ul>
+<h2>日志</h2>
+<p>rclone 有 4 个级别的日志记录，<code>ERROR</code>，<code>NOTICE</code>，<code>INFO</code> 和 <code>DEBUG</code>。默认情况下，rclone 将生成 <code>ERROR</code> 和 <code>NOTICE</code> 级别消息。</p>
+<ul>
+<li><code>-q</code> - rclone将仅生成 <code>ERROR</code> 消息。</li>
+<li><code>-v</code> - rclone将生成 <code>ERROR</code>，<code>NOTICE</code> 和 <code>INFO</code> 消息，<strong>推荐此项</strong>。</li>
+<li><code>-vv</code> - rclone 将生成 <code>ERROR</code>，<code>NOTICE</code>，<code>INFO</code>和 <code>DEBUG</code> 消息。</li>
+<li><code>--log-level LEVEL</code> - 标志控制日志级别。</li>
+</ul>
+<h3>输出日志到文件</h3>
+<p>使用 <code>--log-file=FILE</code> 选项，rclone 会将 <code>Error</code>，<code>Info</code> 和 <code>Debug</code> 消息以及标准错误重定向到 <code>FILE</code>，这里的 <code>FILE</code> 是你指定的日志文件路径。</p>
+<p>另一种方法是使用系统的指向命令，比如：</p>
+<div class="highlight"><pre><span></span>rclone sync -v Onedrive:/DRIVEX Gdrive:/DRIVEX &gt; <span class="s2">&quot;~/DRIVEX.log&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre></div>
+<h2>文件过滤</h2>
+<p><code>--exclude</code> - 排除文件或目录。</p>
+<p><code>--include</code> - 包含文件或目录。</p>
+<p><code>--filter</code> - 文件过滤规则，相当于上面两个选项的其它使用方式。包含规则以 <code>+</code> 开头，排除规则以 <code>-</code> 开头。</p>
+<h3>文件类型过滤</h3>
+<p>比如 <code>--exclude "*.bak"</code>、<code>--filter "- *.bak"</code>，排除所有 <code>bak</code> 文件。也可以写作。</p>
+<p>比如 <code>--include "*.{png,jpg}"</code>、<code>--filter "+ *.{png,jpg}"</code>，包含所有 <code>png</code> 和 <code>jpg</code> 文件，排除其他文件。</p>
+<p><code>--delete-excluded</code> 删除排除的文件。需配合过滤参数使用，否则无效。</p>
+<h3>目录过滤</h3>
+<p>目录过滤需要在目录名称后面加上 <code>/</code>，否则会被当做文件进行匹配。以 <code>/</code> 开头只会匹配根目录（指定目录下），否则匹配所目录。这同样适用于文件。</p>
+<p><code>--exclude ".git/"</code> 排除所有目录下的<code>.git</code> 目录。</p>
+<p><code>--exclude "/.git/"</code> 只排除根目录下的<code>.git</code> 目录。</p>
+<p><code>--exclude "{Video,Software}/"</code> 排除所有目录下的 <code>Video</code> 和 <code>Software</code> 目录。</p>
+<p><code>--exclude "/{Video,Software}/"</code> 只排除根目录下的 <code>Video</code> 和 <code>Software</code> 目录。</p>
+<p><code>--include "/{Video,Software}/**"</code> 仅包含根目录下的 <code>Video</code> 和 <code>Software</code> 目录的所有内容。</p>
+<h3>文件大小过滤</h3>
+<p>默认大小单位为 <code>kBytes</code> ，但可以使用 <code>k</code> ，<code>M</code> 或 <code>G</code> 后缀。</p>
+<p><code>--min-size</code> 过滤小于指定大小的文件。比如 <code>--min-size 50</code> 表示不会传输小于 50k 的文件。</p>
+<p><code>--max-size</code> 过滤大于指定大小的文件。比如 <code>--max-size 1G</code> 表示不会传输大于 1G 的文件。</p>
+<blockquote><p><strong>TIPS:</strong> 博主在实际使用中发现大小过滤两个选项不能同时使用。</p>
+</blockquote>
+<h3>过滤规则文件</h3>
+<p><code>--filter-from &lt;规则文件&gt;</code> 从文件添加包含 / 排除规则。比如 <code>--filter-from filter-file.txt</code>。</p>
+<p>过滤规则文件示例：</p>
+
+<pre><code>- secret*.jpg
++ *.jpg
++ *.png
++ file2.avi
+- /dir/Trash/**
++ /dir/**
+- *</code></pre>
+<p>这里只举例比较常用和简单的一些过滤用法，更复杂和高端的用法可以查看<a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2ZpbHRlcmluZy8=">官方文档</a>。</p>
+<h2>环境变量</h2>
+<p>rclone 中的每个选项都可以通过环境变量设置。环境变量的名称可以通过<a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2ZsYWdzLw==">长选项名称</a>进行转换，删除 <code>--</code> 前缀，更改 <code>-</code> 为<code>_</code>，大写并添加前缀 <code>RCLONE_</code>。环境变量的优先级会低于命令行选项，即通过命令行追加相应的选项时会覆盖环境变量设定的值。</p>
+<p>比如设置最小上传大小 <code>--min-size 50</code>，使用环境变量是 <code>RCLONE_MIN_SIZE=50</code>。当环境变量设置后，在命令行中使用 <code>--min-size 100</code>，那么此时环境变量的值就会被覆盖。</p>
+<h3>常用环境变量</h3>
+<ul>
+<li><code>RCLONE_CONFIG</code> - 自定义配置文件路径</li>
+<li><code>RCLONE_CONFIG_PASS</code> - 若 rclone 进行了加密设置，把此环境变量设置为密码，可自动解密配置文件。</li>
+<li><code>RCLONE_RETRIES</code> - 上传失败重试次数，默认 3 次</li>
+<li><code>RCLONE_RETRIES_SLEEP</code> - 上传失败重试等待时间，默认禁用，单位<code>s</code>、<code>m</code>、<code>h</code>分别代表秒、分钟、小时。</li>
+<li><code>CLONE_TRANSFERS</code> - 并行上传文件数。</li>
+<li><code>RCLONE_CACHE_CHUNK_SIZE</code> - 块的大小，默认5M，理论上是越大上传速度越快，同时占用内存也越多。如果设置得太大，可能会导致进程中断。</li>
+<li><code>RCLONE_CACHE_CHUNK_TOTAL_SIZE</code> - 块可以在本地磁盘上占用的总大小，默认10G。</li>
+<li><code>RCLONE_IGNORE_ERRORS=true</code> - 跳过错误。</li>
+</ul>
+<h2>参考资料</h2>
+<p><a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2RvY3Mv">Rclone 官方文档</a></p>
+<p><strong>本文作者：</strong><a href="https://p3terx.com/">P3TERX</a></p>
+<p><strong>本文链接：</strong><a href="https://p3terx.com/archives/rclone-advanced-user-manual-common-command-parameters.html">https://p3terx.com/archives/rclone-advanced-user-manual-common-command-parameters.html</a></p>
+<p><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://p3terx.com/go/aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo">CC BY-NC-SA 4.0</a> 许可协议。非商业转载及引用请注明出处（作者、原文链接），商业转载请联系作者获得授权。</p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Rclone/">#Rclone</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/screen/">linux screen的用法</a>
+        <p class="yue">使用screen管理会话</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">半半's wiki</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2020 半半</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+                            </span>
+                            <nav class="social-links">
+                                <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/forhetale" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav>
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2020-06-20T16:51+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/galileo-dc4baa7cf4.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!--katex-->
+    <script defer src="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+
+    
+    </body>
+</html>

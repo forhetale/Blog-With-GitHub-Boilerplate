@@ -12,7 +12,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-    <loc>/archives/ubuntu-time/</loc>
+    <loc>/archives/rclone-advanced-user-manual-common-command-parameters/</loc>
     <lastmod>2020-08-14</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
