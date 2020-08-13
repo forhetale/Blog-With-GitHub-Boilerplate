@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rclone常用命令参数
-slug: ubuntu-time
+slug: rclone-advanced-user-manual-common-command-parameters
 date: 2020/08/14 06:03:00
 status: publish
 author: P3TERX
