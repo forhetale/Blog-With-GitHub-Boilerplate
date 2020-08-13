@@ -186,3 +186,11 @@ rclone 中的每个选项都可以通过环境变量设置。环境变量的名�
 ## 参考资料
 
 [Rclone 官方文档](https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2RvY3Mv)
+
+
+
+**本文作者：**[P3TERX](https://p3terx.com/)
+
+**本文链接：**https://p3terx.com/archives/rclone-advanced-user-manual-common-command-parameters.html
+
+**版权声明：**本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://p3terx.com/go/aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo) 许可协议。非商业转载及引用请注明出处（作者、原文链接），商业转载请联系作者获得授权。
