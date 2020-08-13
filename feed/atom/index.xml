@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>半半's wiki</title><updated>2020-07-09T18:02:26.006952+08:06</updated><author><name>半半</name><email>banban@forhetale.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/logo.png</logo><subtitle>Growth always means change.</subtitle><entry><id>/archives/ubuntu-time/</id><title>Ubuntu修改时间</title><updated>2020-07-09T18:02:26.007056+00:00</updated><author><name>半半</name><email>banban@forhetale.com</email><uri>https://blog.forhetale.com</uri></author><content>&lt;p&gt;Ubuntu时钟分为系统时钟（System Clock）和硬件（Real Time Clock，简称RTC）时钟。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>半半's wiki</title><updated>2020-08-13T22:09:35.472090+08:06</updated><author><name>半半</name><email>banban@forhetale.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/logo.png</logo><subtitle>Growth always means change.</subtitle><entry><id>/archives/ubuntu-time/</id><title>Ubuntu修改时间</title><updated>2020-08-13T22:09:35.472208+00:00</updated><author><name>丶Finley</name><email>banban@forhetale.com</email><uri>https://blog.forhetale.com</uri></author><content>&lt;p&gt;Ubuntu时钟分为系统时钟（System Clock）和硬件（Real Time Clock，简称RTC）时钟。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;查看系统时间：date -R&lt;/code&gt;&lt;/pre&gt;
 
@@ -24,7 +24,7 @@ sudo date -s hh:mm:ss //修改时间
 sudo hwclock --systohc //修改生效&lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;p&gt;转载自：&lt;a href="https://www.jianshu.com/p/a6a6dde68b91"&gt;https://www.jianshu.com/p/a6a6dde68b91&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/ubuntu-time/" rel="alternate"/><published>2020-07-10T00:36:00+08:06</published></entry><entry><id>/archives/screen/</id><title>linux screen的用法</title><updated>2020-07-09T18:02:26.007003+00:00</updated><author><name>半半</name><email>banban@forhetale.com</email><uri>https://blog.forhetale.com</uri></author><content>&lt;p&gt;Screen是一个可以在多个进程之间多路复用一个物理终端的全屏窗口管理器。Screen中有会话的概念，用户可以在一个会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。
+</content><link href="/archives/ubuntu-time/" rel="alternate"/><published>2020-07-10T00:36:00+08:06</published></entry><entry><id>/archives/screen/</id><title>linux screen的用法</title><updated>2020-08-13T22:09:35.472138+00:00</updated><author><name>半半</name><email>banban@forhetale.com</email><uri>https://blog.forhetale.com</uri></author><content>&lt;p&gt;Screen是一个可以在多个进程之间多路复用一个物理终端的全屏窗口管理器。Screen中有会话的概念，用户可以在一个会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。
  通俗的讲，screen命令用于新建一个或多个“命令行窗口”，在新建的这“窗口”中，可以执行命令；每个“窗口”都是独立并行的。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2&gt;安装screen&lt;/h2&gt;
