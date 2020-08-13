@@ -4,7 +4,7 @@ title: Ubuntu修改时间
 slug: ubuntu-time
 date: 2020/07/10 00:36:00
 status: publish
-author: 半半
+author: 丶Finley
 categories: 
   - 系统
 tags: 
