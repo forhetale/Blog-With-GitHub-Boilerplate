@@ -1,12 +1,20 @@
--layout: post
+---
+
+layout: post
 title: ChatGPT使用指南
 slug: ChatGPT
 date: 2023/06/18 13:23:00
 status: publish
 author: Tait.Feng
-categories: 工具
-tags: ChatGPT
+categories: 
+
+-工具
+tags: 
+
+-ChatGPT
 excerpt: 帮助我的朋友们使用ChatGPT
+
+---
 
 在国内想要使用ChatGPT需要一个科学上网的环境，如果你已经拥有访问外网的能力，可以跳过本文的第一部分。
 
