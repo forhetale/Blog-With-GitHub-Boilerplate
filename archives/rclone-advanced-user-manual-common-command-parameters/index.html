@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/993887726f709e8760ce9bc55ee66643.json"
+            api: "https://cdn.jsdelivr.net/gh/forhetale/wiki@gh-pages/72e3a4b0527d3bb23aa64075b2c54c4c.json"
         }
     </script>
     
@@ -86,7 +86,7 @@
 <h2>安装 Rclone</h2>
 <h3>Linux/macOS/BSD</h3>
 <p>官方提供了<a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2luc3RhbGwvI3NjcmlwdC1pbnN0YWxsYXRpb24=">一键安装脚本</a>：</p>
-<div class="highlight"><pre><span></span>curl https://rclone.org/install.sh <span class="p">|</span> sudo bash
+<div class="highlight"><pre><span></span>curl<span class="w"> </span>https://rclone.org/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
 </pre></div>
 <h3>Windows</h3>
 <p><a href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2Rvd25sb2Fkcy8=">直接下载</a></p>
@@ -97,16 +97,16 @@
 <p><code>rclone config show</code> - 显示配置文件信息</p>
 <h2>命令语法</h2>
 <div class="highlight"><pre><span></span><span class="c1"># 本地到网盘</span>
-rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;本地路径&gt; &lt;网盘名称:路径&gt; <span class="o">[</span>参数<span class="o">]</span> <span class="o">[</span>参数<span class="o">]</span> ...
+rclone<span class="w"> </span><span class="o">[</span>功能选项<span class="o">]</span><span class="w"> </span>&lt;本地路径&gt;<span class="w"> </span>&lt;网盘名称:路径&gt;<span class="w"> </span><span class="o">[</span>参数<span class="o">]</span><span class="w"> </span><span class="o">[</span>参数<span class="o">]</span><span class="w"> </span>...
 
 <span class="c1"># 网盘到本地</span>
-rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘名称:路径&gt; &lt;本地路径&gt; <span class="o">[</span>参数<span class="o">]</span> <span class="o">[</span>参数<span class="o">]</span> ...
+rclone<span class="w"> </span><span class="o">[</span>功能选项<span class="o">]</span><span class="w"> </span>&lt;网盘名称:路径&gt;<span class="w"> </span>&lt;本地路径&gt;<span class="w"> </span><span class="o">[</span>参数<span class="o">]</span><span class="w"> </span><span class="o">[</span>参数<span class="o">]</span><span class="w"> </span>...
 
 <span class="c1"># 网盘到网盘</span>
-rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘名称:路径&gt; &lt;网盘名称:路径&gt; <span class="o">[</span>参数<span class="o">]</span> <span class="o">[</span>参数<span class="o">]</span> ...
+rclone<span class="w"> </span><span class="o">[</span>功能选项<span class="o">]</span><span class="w"> </span>&lt;网盘名称:路径&gt;<span class="w"> </span>&lt;网盘名称:路径&gt;<span class="w"> </span><span class="o">[</span>参数<span class="o">]</span><span class="w"> </span><span class="o">[</span>参数<span class="o">]</span><span class="w"> </span>...
 </pre></div>
 <h3>用法示例</h3>
-<div class="highlight"><pre><span></span>rclone move -v /Download Onedrive:/Download --transfers<span class="o">=</span><span class="m">1</span>
+<div class="highlight"><pre><span></span>rclone<span class="w"> </span>move<span class="w"> </span>-v<span class="w"> </span>/Download<span class="w"> </span>Onedrive:/Download<span class="w"> </span>--transfers<span class="o">=</span><span class="m">1</span>
 </pre></div>
 <h2>常用功能选项</h2>
 <ul>
@@ -146,7 +146,7 @@ rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘�
 <h3>输出日志到文件</h3>
 <p>使用 <code>--log-file=FILE</code> 选项，rclone 会将 <code>Error</code>，<code>Info</code> 和 <code>Debug</code> 消息以及标准错误重定向到 <code>FILE</code>，这里的 <code>FILE</code> 是你指定的日志文件路径。</p>
 <p>另一种方法是使用系统的指向命令，比如：</p>
-<div class="highlight"><pre><span></span>rclone sync -v Onedrive:/DRIVEX Gdrive:/DRIVEX &gt; <span class="s2">&quot;~/DRIVEX.log&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<div class="highlight"><pre><span></span>rclone<span class="w"> </span>sync<span class="w"> </span>-v<span class="w"> </span>Onedrive:/DRIVEX<span class="w"> </span>Gdrive:/DRIVEX<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;~/DRIVEX.log&quot;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </pre></div>
 <h2>文件过滤</h2>
 <p><code>--exclude</code> - 排除文件或目录。</p>
@@ -216,8 +216,8 @@ rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘�
 <section id="ga-content_pager">
 
     <div class="next">
-        <h3>没有了</h3>
-        <p class="yue">这是最新的文章</p>
+        <a class="ga-highlight" href="/archives/ChatGPT/">ChatGPT使用指南</a>
+        <p class="yue">帮助我的朋友们使用ChatGPT</p>
     </div>
 
 
@@ -240,7 +240,7 @@ rclone <span class="o">[</span>功能选项<span class="o">]</span> &lt;网盘�
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2020 半半</span>
+                            <span>Copyright © 2023 半半</span>
                             <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">
