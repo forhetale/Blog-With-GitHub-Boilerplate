@@ -45,7 +45,7 @@ ios/ipados需再购买软件配置服务。
 
 [Settings (poe.com)](https://poe.com/ChatGPT)  Poe，注册即用，选择左侧chatgpt，免费。
 
-https://chat.zhile.io/  fakeGPT， 可以直连，但不太稳定，推荐挂着梯子，免费。
+Google新出的Bard也挺好用,使用美国节点访问[Google Bard)](https://bard.google.com/chat)
 
 ## 三、注册正经ChatGPT账号
 
