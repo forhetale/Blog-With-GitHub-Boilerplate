@@ -19,7 +19,7 @@ excerpt: 帮助我的朋友们使用ChatGPT
 
 ### 1.购买梯子
 
-推荐一个本人自用的梯子：https://wmsxwd-2.men/#/register?code=g7oa7Pi3
+推荐一个本人自用的梯子：https://wmsxwd-3.men/#/register?code=g7oa7Pi3
 
 注册账号后登录，在导航栏[购买订阅]处购买套餐，
 
